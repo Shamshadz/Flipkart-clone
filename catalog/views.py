@@ -27,3 +27,7 @@ def index(request):
     product = Product.objects.all()
     context = {'product': product}
     return render(request, 'catalog/catalog.html', context)
+
+def display(request):
+
+    return render(request, 'catalog/DisPro.html')

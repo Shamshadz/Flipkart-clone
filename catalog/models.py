@@ -19,5 +19,10 @@ class Product(models.Model):
     scrset = models.ImageField(null=True, blank= True)
     price = models.DecimalField(decimal_places=2, max_digits=16)
 
+    @property
+    def scrset_url(self):
+        if self.scrset and hasattr(self.scrset, 'url'):
+            return self.scrset.url
+
     def __str__(self) -> str:
         return self.name

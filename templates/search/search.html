@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="main-container container-fluid">
+
+    {% if product|length < 1  %}
+        <div class="container-fluid result-error">
+            <img src="{% static 'images/no-result.png' %}" alt="">
+            <p>Sorry, no results found!</p>
+            <p>Please check the spelling or try searching for something else</p>
+        </div>
+    {% endif %}
+    {% for item in product %}
+    <div class="row flex-container">
+        <div class="col-sm flex-item">
+            <div class="div-image">
+                <div style="margin: auto;">
+                    <img style="height: 13rem; width: 10rem;"  src="{{ item.scrset.url|default_if_none:'#'  }}">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm flex-item" style="margin-top:1rem">
+            <div>
+                <div class="col col-7-12">
+                    <div class="">{{ item.name }}</div>
+                    <div class=""><span id="itemRating_LSTMOBGE2KYCFZA7BRBUNTJVL_MOBGE2KYCFZA7BRB_" class="">
+                            <div class="">4.3<img
+                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=="
+                                    class=""></div>
+                        </span><span class=""><span><span>62,003 Ratings&nbsp;</span><span
+                                    class="">&amp;</span><span>&nbsp;5,075 Reviews</span></span></span>
+                    </div>
+                    <div class="">
+                        <ul class="">
+                            <li class="">4 GB RAM | 64 GB ROM | Expandable Upto 256 GB</li>
+                            <li class="">17.32 cm (6.82 inch) HD+ Display</li>
+                            <li class="">13MP + Depth Lens | 8MP Front Camera</li>
+                            <li class="">6000 mAh Li-ion Polymer Battery</li>
+                            <li class="">Unisoc T610 Processor</li>
+                            <li class="">1 Year on Handset And 6 Months on Accessories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm flex-item" style="margin-top:1rem">
+            <div class="col col-5-12">
+                <div class="">
+                    <div class="">
+                        <div class="">₹{{ item.price }}</div>
+                        <div class="">₹11,999</div>
+                        <div class=""><span>{{ item.offer }}</span></div>
+                    </div>
+                </div>
+                <div class=""><img height="21"
+                        src="//static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

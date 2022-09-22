@@ -309,3 +309,37 @@ footer span{
         font-size: .75em;
     }
 }
+
+
+/* .search */
+.flex-container{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    width: 84%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.main-container{
+    padding: 10px;
+}
+
+.div-image{
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-search{
+    border: none;
+    padding: none;
+    background: none;
+}
+
+.result-error{
+    text-align:center;
+    font-size: 2rem;
+    color: rgb(153, 150, 150);
+    padding: 3rem;
+}

@@ -23,32 +23,34 @@
         <div class="row py-2 d-flex">
             <!-- Logo -->
             <div class="col logo offset-lg-1">
-                <a href="#">
+                <a href="/">
                     <img width="75" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png"
                         alt="Flipkart" title="Flipkart">
                 </a>
-                <a href="#">Explore <span>Plus</span>
+                <a href="/">Explore <span>Plus</span>
                     <img width="10" src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png">
                 </a>
             </div>
 
             <!-- Search -->
-            <div class="col col-md-4  search d-flex dropdown bg-white">
-                <input class="form-control dropdown-toggle" type="search"
-                    placeholder="Search for products, brands and more" aria-label="Search" id="navbarDropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-search mt-2 ml-sm-1 text-primary"></i>
-                <div class="dropdown-menu col-12 search-item" aria-labelledby="navbarDropdown">
-                    <h6 class="ml-4">Discover More</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>mobiles</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>t-shirts</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>shoes</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>laptop</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>tv</a>
-                    <a class="dropdown-item py-2" href=""><i class="fa fa-search text-secondary mr-3"></i>sarees</a>
+            <form method="GET" action="search">
+                <div class="col col-md-4  search d-flex dropdown bg-white">
+                    <input class="form-control dropdown-toggle" type="search"
+                        placeholder="Search for products, brands and more" aria-label="Search" name="query" id="query"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="nav-search"><i class="fa fa-search mt-2 ml-sm-1 text-primary"></i></button>
+                    <div class="dropdown-menu col-12 search-item" aria-labelledby="navbarDropdown">
+                        <h6 class="ml-4">Discover More</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>mobiles</a>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>t-shirts</a>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>shoes</a>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>laptop</a>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>tv</a>
+                        <a class="dropdown-item py-2"><i class="fa fa-search text-secondary mr-3"></i>sarees</a>
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <!-- Login -->
             <div class="col dropdown login">
@@ -177,6 +179,9 @@
 
     {% block catalog %}
     {% endblock catalog %}
+
+    {% block display_product %}
+    {% endblock display_product %}
 
     {% block content %}
     {% endblock content %}
