@@ -4,5 +4,5 @@ from catalog import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('product',views.productList.as_view()),
-    path('display',views.display,name='display'),
+    path('display/<str:slug>',views.display,name='display'),
 ]

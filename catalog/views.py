@@ -1,7 +1,9 @@
 import imp
+from multiprocessing import context
 from urllib import response
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from catalog.models import Product
+import json
 
 
 # for rest api
@@ -28,6 +30,20 @@ def index(request):
     context = {'product': product}
     return render(request, 'catalog/catalog.html', context)
 
-def display(request):
+def display(request,slug):
+    
+    product = Product.objects.filter(id=slug)
 
-    return render(request, 'catalog/DisPro.html')
+    print(product)
+    context = {'product': product}
+
+    return render(request, 'catalog/DisPro.html', context)
+
+# def display(request):
+#     id = request.POST.get('id') #['id']
+#     product = Product.objects.filter(id=id)
+
+#     print(product)
+#     context = {'product': product}
+
+#     return render(request, 'catalog/DisPro.html', context)

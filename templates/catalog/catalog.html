@@ -44,27 +44,26 @@
         </div>
         <hr>
         <div class="row d-flex nowrap justify-content-center">
-
             {% for product in product %}
-            {% if forloop.counter < 6 %} <div class="card text-center sales">
-                <img class="card-img-top p-2 img-fluid w-100"
-                    alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
-                    src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
-                <div class="card-body p-1" title="{{ product.offer }}">
-                    <h6 class="card-title">{{ product.name }}</h6>
-                    <a href="#" class="card-link">{{ product.offer }}</a>
-                    <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
+            {% if forloop.counter < 6 %} 
+                <div class="card text-center sales">
+                    <img class="card-img-top p-2 img-fluid w-100"
+                        alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                        src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
+                    <div class="card-body p-1" title="{{ product.offer }}">
+                        <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                        <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
+                        <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
+                    </div>
                 </div>
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
-
     </div>
-</div>
-<div class="card ml-2 p-2" style="height: 15%;">
-    <img class="card-img img-fluid w-100"
-        src="https://rukminim1.flixcart.com/flap/600/358/image/633789f7def60050.jpg?q=70" alt="IKFS">
-</div>
+    <div class="card ml-2 p-2" style="height: 15%;">
+        <img class="card-img img-fluid w-100"
+            src="https://rukminim1.flixcart.com/flap/600/358/image/633789f7def60050.jpg?q=70" alt="IKFS">
+    </div>
 </div>
 
 <!-- 3-Card Banner Section -->
@@ -107,11 +106,11 @@
         {% if product.category.name == "TV&Appliances" %}
         <div class="card text-center sales">
             <img class="card-img-top p-2 img-fluid w-100"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}"
-                srcset="{{ product.srcset.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -141,10 +140,11 @@
         {% if product.category.name == "Home&Furnitures" %}
         <div class="card text-center sales">
             <img class="card-img-top p-2 img-fluid w-100"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -196,11 +196,11 @@
         {% if product.category.name == "Electronics" %}
         <div class="card text-center sales">
             <img class="card-img-top p-2 img-fluid w-100"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}"
-                srcset="{{ product.srcset.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -225,16 +225,16 @@
     </div>
     <hr>
     <div class="row d-flex nowrap justify-content-center">
-
+        
         {% for product in product %}
         {% if product.category.name == "Mobiles" %}
-        <div class="card text-center sales">
+        <div class="card text-center sales">     
             <img class="card-img-top p-2 ml-5 img-fluid w-50"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}"
-                srcset="{{ product.srcset.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -263,11 +263,11 @@
         {% if product.category.name == "Fashions" %}
         <div class="card text-center sales">
             <img class="card-img-top p-2 img-fluid w-100"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}"
-                srcset="{{ product.srcset.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -296,11 +296,11 @@
         {% if product.category.name == "Men" %}
         <div class="card text-center sales">
             <img class="card-img-top p-2 ml-3 img-fluid w-75"
-                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer" src="{{ product.image.url }}"
-                srcset="{{ product.srcset.url }}">
+                alt="one click Solid Single Breasted Party, Casual, Wedding Men Blazer"
+                src="{{ product.image.url }}" srcset="{{ product.srcset.url }}">
             <div class="card-body p-1" title="{{ product.offer }}">
-                <h6 class="card-title">{{ product.name }}</h6>
-                <a href="#" class="card-link">{{ product.offer }}</a>
+                <a href="/display/{{product.id}}" class="showItem" data-id="{{product.id}}"><h6 class="card-title" id="{{product.id}}">{{ product.name }}</h6></a>
+                <a href="/display/{{product.id}}" class="card-link showItem" data-id="{{product.id}}">{{ product.offer }}</a>
                 <p class="card-subtitle text-muted">{{ product.subtitle }}</p>
             </div>
         </div>
@@ -309,5 +309,35 @@
 
     </div>
 </div>
+
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function () {
+    $(function (){ 
+        $('.showItem').on('click', function(){ 
+            //Fetch Id 
+            var id = $(this).data('id');  
+            
+            $.ajax({
+                type: "POST",
+                url: "display",   
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}',
+                    'id' : id},   /* Passing the text data */
+                success:  function(data){
+                    window.location.href = '/display';
+                    // alert(response);
+                }
+            });
+
+
+            var element = document.getElementById(`${id}`);
+            element.innerHTML = element.innerText || element.textContent;
+            console.log(element.innerHTML)
+            
+        }); 
+    });
+});
+</script> -->
 
 {% endblock catalog %}

@@ -311,7 +311,7 @@ footer span{
 }
 
 
-/* .search */
+/* .search template */
 .flex-container{
     background-color: white;
     display: flex;
@@ -342,4 +342,39 @@ footer span{
     font-size: 2rem;
     color: rgb(153, 150, 150);
     padding: 3rem;
+}
+
+.product-container{
+    display: flex;
+    justify-content: center;
+}
+
+.product-image{
+    position: sticky;
+    top: 10vh; /* required */
+    height: 40%;
+}
+
+.product-image img{
+    height: 70vh;
+    width: 36vw;
+    margin: 8px -6px;
+}
+
+.product-image-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.product-image-btn button{
+    height: 9vh;
+    width: 15vw;
+    margin: 3% 1%;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border: none;
+    color: #fff;
+}
+
+.product-information{
+    width: 58vw;
 }
