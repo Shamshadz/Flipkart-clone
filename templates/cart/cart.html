@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<h1>cart.js</h1>
+
+<div class="d-flex">
+    <div class="cart-product">
+        <div class=cart-product-top>flixcart(4)</div>
+        {% for item in orderItem.product %}
+        <div class="cart-product-middle">
+            <div style="padding: 15px;">
+                <div>
+                    <img src="{{ item.srcset.url }}" alt="">
+                    <div style="padding: 1vw 4vw;">
+                        <div>{{ item.name}}</div>
+                        <br>
+                        <div>{{ item.price}}</div>
+                    </div>
+                    <div style="width: 21vw; padding: 1vw 5vw;">
+                        <p>Delivery by Tue Oct 4 | ₹30</p>
+                    </div>
+                </div>
+                <div>plus - +</div> 
+                <hr>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <div class="cart-product-btn">
+            <button>Place Order</button>
+        </div>
+    </div>
+    <div class="cart-info">product Information</div>
+</div>
+
+{% endblock %}

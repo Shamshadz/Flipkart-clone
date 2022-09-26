@@ -21,25 +21,27 @@ window.addEventListener('scroll',fixNav);
 // }
 
 
+
 // $(function (){ 
-//     $('.showItem').on('click', function(){ 
+//     $('.addBtn').on('click', function(){ 
 //         //Fetch Id 
-//         var id = $(this).data('id');  
+//         var id = $(this).data('id');
         
-//         // $ajax({
-//         //     type: "POST",
-//         //     url: '/display',   
-//         //     data: {csrfmiddlewaretoken: '{{ csrf_token }}',
-//         //           id : 'id'},   /* Passing the text data */
-//         //     success:  function(response){
-//         //            alert(response);
-//         //        }
-//         // });
+        
+//         $ajax({
+//             type: "POST",
+//             url: '/cart',   
+//             data: {csrfmiddlewaretoken: '{{ csrf_token }}',
+//                   id : id},   /* Passing the text data */
+//             success:  function(response){
+//                    alert(response);
+//                }
+//         });
 
 
-//         var element = document.getElementById(`${id}`)
-//         element.innerHTML = element.innerText || element.textContent;
-//         console.log(element.innerHTML)
+// //         var element = document.getElementById(`${id}`)
+// //         element.innerHTML = element.innerText || element.textContent;
+// //         console.log(element.innerHTML)
         
 //     }); 
 // }); 
