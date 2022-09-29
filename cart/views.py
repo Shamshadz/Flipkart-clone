@@ -15,17 +15,21 @@ def cart(request):
 
             customer = request.user
             orderId = Order.objects.filter(customer=customer,complete=False)
-            print(orderId)
+            
             if orderId:
                 for orderId in orderId:
                     for product in product:
-                        orderItem = OrderItem.objects.create(product_id=productId,order=orderId,quantity=qty)
+                        try:
+                            orderAvail = OrderItem.objects.get(product_id=productId)
+                            orderAvail.quantity += qty 
+                            orderAvail.save()
+                        except:
+                            orderItem = OrderItem.objects.create(product_id=productId,order=orderId,quantity=qty)
             else:
                 order = Order.objects.create(customer=request.user, complete=False)
 
                 for product in product:
                     orderItem = OrderItem.objects.create(product_id=productId,order=order,quantity=qty)
-
 
 
     if request.user.is_authenticated:
@@ -35,6 +39,6 @@ def cart(request):
         for orderId in orderId:
             orderObject = OrderItem.objects.filter(order = orderId)
 
-        context = {'orderItem':orderObject}
+        context = {'orderItem':orderObject, 'order':orderId}
 
-    return render(request, 'cart/cart.html',context)
+    return render(request, 'cart/cart.html',context) 

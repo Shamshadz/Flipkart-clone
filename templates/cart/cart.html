@@ -8,18 +8,22 @@
 <div class="d-flex">
     <div class="cart-product">
         <div class=cart-product-top>flixcart(4)</div>
-        {% for item in orderItem.product %}
+        {% for item in orderItem %}
         <div class="cart-product-middle">
             <div style="padding: 15px;">
                 <div>
-                    <img src="{{ item.srcset.url }}" alt="">
+                    <img src="{{ item.product.image.url }}">
                     <div style="padding: 1vw 4vw;">
-                        <div>{{ item.name}}</div>
+                        <div>{{ item.product.name }}</div>
                         <br>
-                        <div>{{ item.price}}</div>
+                        <div>{{ item.product.price }}</div>
                     </div>
                     <div style="width: 21vw; padding: 1vw 5vw;">
                         <p>Delivery by Tue Oct 4 | ₹30</p>
+                        <div>
+                            <p>TOTAL ITEMS:{{ item.quantity }}</p>
+                            <div><p>TOTAL PRICE:{{ item.get_total|floatformat:2 }}</p></div>
+                        </div>
                     </div>
                 </div>
                 <div>plus - +</div> 
@@ -33,7 +37,10 @@
             <button>Place Order</button>
         </div>
     </div>
-    <div class="cart-info">product Information</div>
+    <div class="cart-info">product Information
+        <div>TOTAL ITEMS: {{ order.get_cart_items }}</div>
+        <div>TOTAL PRICE: {{ order.get_cart_total|floatformat:2 }}</div>
+    </div>
 </div>
 
 {% endblock %}
